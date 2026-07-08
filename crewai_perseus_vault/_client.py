@@ -8,7 +8,7 @@ MCP stdio transport).
 
 The client core (spawn subprocess, background stdout reader, id-correlated RPC
 with timeout, MCP initialize handshake) is adapted from the proven
-``Perseus-Computing-LLC/adk-mimir-memory`` package.
+``Perseus-Computing-LLC/adk-perseus-vault-memory`` package.
 
 Requirements:
     A ``perseus-vault`` binary must be on ``$PATH`` or passed explicitly.  Build

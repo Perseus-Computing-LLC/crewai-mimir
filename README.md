@@ -40,7 +40,7 @@ from crewai import Agent, Crew, Task
 from crewai_perseus_vault import build_perseus_vault_tools
 
 # One shared perseus-vault process backs both tools.
-memory_tools = build_perseus_vault_tools(db_path="~/.mimir/data/crew.db")
+memory_tools = build_perseus_vault_tools(db_path="~/.perseus-vault/data/crew.db")
 
 researcher = Agent(
     role="Research Analyst",
@@ -76,7 +76,7 @@ from crewai_perseus_vault import (
     PerseusVaultClient,
 )
 
-client = PerseusVaultClient(db_path="~/.mimir/data/crew.db")   # one shared process
+client = PerseusVaultClient(db_path="~/.perseus-vault/data/crew.db")   # one shared process
 remember = PerseusVaultRememberTool(client=client)
 recall = PerseusVaultRecallTool(client=client)
 
@@ -90,8 +90,8 @@ If you omit `client`, each tool lazily starts its own `perseus-vault serve` on f
 
 ```python
 tools = build_perseus_vault_tools(
-    db_path="~/.mimir/data/crew.db",
-    encryption_key="~/.mimir/key.b64",   # base64-encoded 32-byte AES-256-GCM key
+    db_path="~/.perseus-vault/data/crew.db",
+    encryption_key="~/.perseus-vault/key.b64",   # base64-encoded 32-byte AES-256-GCM key
 )
 ```
 
